@@ -19,36 +19,36 @@
 from setuptools import setup, Extension
 
 module1 = Extension("esm",
-                    #define_macros=[("HEAP_CHECK", 1)],
-                    sources = ['src/esm.c',
-                               'src/aho_corasick.c',
-                               'src/ac_heap.c',
-                               'src/ac_list.c'])
-                    
-setup (name = "esmre",
-       version = '0.3.2',
-       description = 'Regular expression accelerator',
-       long_description = " ".join("""
+                    # define_macros=[("HEAP_CHECK", 1)],
+                    sources=['src/esm.c',
+                             'src/aho_corasick.c',
+                             'src/ac_heap.c',
+                             'src/ac_list.c'])
+
+setup(name="esmre",
+      version='0.3.2',
+      description='Regular expression accelerator',
+      long_description=" ".join("""
         Modules used to accelerate execution of a large collection of regular
         expressions using the Aho-Corasick algorithms.
        """.strip().split()),
-       classifiers = [
-        'Development Status :: 4 - Beta',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: '
-            'GNU Library or Lesser General Public License (LGPL)',
-        'Operating System :: POSIX',
-        'Programming Language :: C',
-        'Programming Language :: Python',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: Text Processing :: Indexing'
-       ],
-       install_requires=['setuptools'],
-       author = 'Will Harris, Matteo Angelino',
-       author_email = 'esmre@greatlibrary.net, matteo.angelino@gmail.com',
-       url = 'http://code.google.com/p/esmre/',
-       license = 'GNU LGPL',
-       platforms = ['POSIX'],
-       ext_modules = [module1],
-       package_dir = {'': 'src'},
-       py_modules = ["esmre"])
+      classifiers=[
+          'Development Status :: 4 - Beta',
+          'Intended Audience :: Developers',
+          'License :: OSI Approved :: '
+          'GNU Library or Lesser General Public License (LGPL)',
+          'Operating System :: POSIX',
+          'Programming Language :: C',
+          'Programming Language :: Python',
+          'Topic :: Software Development :: Libraries :: Python Modules',
+          'Topic :: Text Processing :: Indexing'
+      ],
+      install_requires=['setuptools'],
+      author='Will Harris, Matteo Angelino',
+      author_email='esmre@greatlibrary.net, matteo.angelino@gmail.com',
+      url='http://code.google.com/p/esmre/',
+      license='GNU LGPL',
+      platforms=['POSIX'],
+      ext_modules=[module1],
+      package_dir={'': 'src'},
+      py_modules=["esmre"])

@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "aho_corasick.h"
 
-typedef struct {
+typedef struct esm_IndexObject {
     PyObject_HEAD
     ac_index*   index;
 } esm_IndexObject;
@@ -262,11 +262,11 @@ PyInit_esm(void)
     PyObject* m;
 
     if (PyType_Ready(&esm_IndexType) < 0)
-        return;
+        return NULL;
 
     m = PyModule_Create(&esm_module);
     if (m == NULL) {
-        return;
+        return NULL;
     }
 
     Py_INCREF(&esm_IndexType);
